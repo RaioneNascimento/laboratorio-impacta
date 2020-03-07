@@ -4,7 +4,8 @@ const json = {
     'Content-Type' : 'text/html'
 }
 
-const requisicao = function (request, response){
+//ao colocar o _ pedimos para ignorar o parâmetro
+const requisicao = function (_, response){
     response.writeHead(200, json);
     response.write('<h1>Bem vindo ao nosso http server</h1>');
     response.end();
@@ -12,8 +13,6 @@ const requisicao = function (request, response){
 
 const server = http.createServer(requisicao);
 
-const callback = function(){
+server.listen(3000, function(){
     console.log('Servidor no ar');
-}
-
-server.listen(3000, callback);
+});
