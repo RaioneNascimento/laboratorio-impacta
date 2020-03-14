@@ -15,12 +15,12 @@ export class Componente1 extends React.Component{
 
     state = this.initialState
     
-    Limpar(){
+    limpar(){
         this.setState(this.initialState);
     }
 
     componentDidMount(){
-        setTimeout(_ => this.setState({...this.state, nome : 'Raione'}), 3000);
+        setTimeout(() => this.setState({...this.state, nome : 'Raione'}), 3000);
         setTimeout(_ => this.Limpar(), 10000);
     }
 
@@ -34,10 +34,9 @@ export class Componente1 extends React.Component{
             <div>
                 <h1>Meu Primeiro Componente - {this.state ? this.state.nome : ''}</h1>
                     <ul>
-                        {this.state.categorias.map((cat,index) => <Lista key={index} texto={cat} />)}
+                        {this.renderLista()}
                     </ul>
             </div>
         );
-        
     }
 }

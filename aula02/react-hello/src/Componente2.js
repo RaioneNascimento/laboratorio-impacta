@@ -18,7 +18,7 @@ export const Componente2 = _ => {
     <div>
         <h1>Meu Primeiro Componente - {nome}</h1>
         <ul>
-            {renderLista()}
+            {renderLista()} 
         </ul>
     </div>
     );
